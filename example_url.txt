@@ -1,0 +1,157 @@
+customer
+======================================
+	add new customer
+	----------------
+	http://localhost/janata/public/add/customer		name=mahmud&phone=01682103738&address=kuet
+	get all customers
+	-----------------
+	http://localhost/janata/public/get/customer
+	edit customer
+	--------------
+	http://localhost/janata/public/edit/customer 	id=2&name=mahmud&phone=01682103738&address=kuet
+	delete cusatomer
+	----------------
+	http://localhost/janata/public/delete/customer 	id=2
+
+
+supplier
+======================================
+	add new supplier
+	----------------
+	http://localhost/janata/public/add/supplier		name=mahmud&phone=01682103738&address=kuet
+	get all suppliers
+	-----------------
+	http://localhost/janata/public/get/supplier
+	edit supplier
+	--------------
+	http://localhost/janata/public/edit/supplier 	id=2&name=mahmud&phone=01682103738&address=kuet
+	delete su[pplier
+	----------------
+	http://localhost/janata/public/delete/supplier 	id=2
+
+
+category
+=======================================
+	add new category
+	------------------
+	http://localhost/janata/public/add/category		name=ring&purchase_price=200&sell_price=250&warning_quantity=5
+	get categories
+	---------------
+	http://localhost/janata/public/get/category
+	edit category
+	--------------
+	http://localhost/janata/public/edit/category	id=2&name=ring&purchase_price=200&sell_price=250&warning_quantity=5
+	delete category
+	----------------
+	http://localhost/janata/public/edit/category	id=2
+
+expense
+==========================================
+	add new expense category
+	-------------------------
+	http://localhost/janata/public/add/expense-category		name=salary
+	get expense categories
+	-----------------------
+	http://localhost/janata/public/get/expense-category
+	edit expense category
+	-----------------------
+	http://localhost/janata/public/edit/expense-category	id=1&name=salary
+	delet expense category
+	-----------------------
+	http://localhost/janata/public/delete/expense-category	id=1
+
+purchase
+==============================================
+	add purchase voucher
+	---------------------
+	http://localhost/janata/public/add/purchase-voucher		date=2015-08-10&supplier_id=1&note=this is note&items_info=[{"category_id":1,"caret":21,"quantity":5,"purchase_rate":200},{"category_id":2,"caret":18,"quantity":10,"purchase_rate":300},{"category_id":2,"caret":22,"quantity":15,"purchase_rate":400}]
+	items_info
+	-------------
+	[
+		{
+			"category_id":1,
+			"caret":21,
+			"quantity":5,
+			"purchase_rate":200
+		},
+		{
+			"category_id":2,
+			"caret":18,
+			"quantity":10,
+			"purchase_rate":300
+		},
+		{
+			"category_id":2,
+			"caret":22,
+			"quantity":15,
+			"purchase_rate":400
+		}
+	]
+
+	view purchase voucher
+	-----------------------
+	http://localhost/janata/public/get/purchase-voucher?start_date=2015-07-10&end_date=2016-08-08
+
+Sell
+====================================
+	add sell voucher
+	----------------
+	http://localhost/janata/public/add/sell-voucher?date=2015-08-11&customer_id=1&note=this is a note&items_info=[{"date":"2015-08-11","category_id":1,"caret":21,"quantity":5,"sell_rate":200,"customer_id":1,"paid_amount":150,"due":50,"note":"this is note","loss":2},{"date":"2015-08-12","category_id":2,"caret":22,"quantity":10,"sell_rate":500,"customer_id":2,"paid_amount":400,"due":100,"note":"this is note2","loss":4},{"date":"2015-08-13","category_id":3,"caret":24,"quantity":15,"sell_rate":1000,"customer_id":3,"paid_amount":800,"due":200,"note":"this is note3","loss":6}]
+	get sell vouchers
+	--------------------
+	http://localhost/janata/public/get/sell-voucher?start_date=2015-09-08&end_date=2016-08-08
+Due
+=====================================
+	add due voucher
+	-----------------
+	http://localhost/janata/public/add/due-voucher?sell_id=1&date=2015-08-11&amount=100&note=this%20is%20note
+	get all due vouchers
+	----------------------
+	http://localhost/janata/public/get/due-voucher?start_date=2015-08-08&end_date=2016-08-08
+Expense
+======================================
+	add expense voucher
+	---------------------
+	http://localhost/janata/public/add/expense-voucher?date=2015-08-11&category=1&description=this%20is%20desc&amount=500
+	get all expense vouchers
+	-----------------------
+	http://localhost/janata/public/get/expense-voucher?start_date=2015-08-08&end_date=2016-08-08
+Report
+=======================================
+	purchase report
+	------------------
+	http://localhost/janata/public/report/purchase?start_date=2015-06-02&end_date=2016-10-10
+	supplier wise purchase report
+	--------------------------------
+	http://localhost/janata/public/report/purchase/1?start_date=2015-06-06&end_date=2016-10-10
+	salses report
+	---------------
+	http://localhost/janata/public/report/sell?start_date=2015-06-06&end_date=2016-10-10
+	customer wise sales report
+	---------------------------
+	http://localhost/janata/public/report/sell/1?start_date=2015-06-06&end_date=2016-10-10
+	profit-loss report
+	-------------------
+	http://localhost/janata/public/report/profit-loss?start_date=2015-08-01&end_date=2015-08-30
+	loss report
+	-------------
+	http://localhost/janata/public/report/weight-loss?start_date=2015-08-01&end_date=2015-08-31
+	expense report
+	---------------
+	http://localhost/janata/public/report/expense?start_date=2015-08-01&end_date=2015-08-31
+	due report
+	--------------
+	http://localhost/janata/public/report/due?start_date=2015-08-01&end_date=2015-08-31
+	stock report
+	------------
+	http://localhost/janata/public/report/stock
+	low stock
+	---------
+	http://localhost/janata/public/report/low-stock
+
+Authentication
+=======================================================
+	login
+	----------
+	http://localhost/janata/public/login?username=admin&password=admin
+
