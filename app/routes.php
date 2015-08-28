@@ -201,3 +201,7 @@ Route::get('/login', array(
 		'as'	=>	'getLogin',
 		'uses'	=>	'AccountController@getLogin'
 	));
+Route::post('/change/password', array(
+		'as'	=>	'postChangePassword',
+		'uses'	=>	'AccountController@postChangePassword'
+	));
