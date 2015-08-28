@@ -43,7 +43,7 @@ category
 	http://localhost/janata/public/edit/category	id=2&name=ring&purchase_price=200&sell_price=250&warning_quantity=5
 	delete category
 	----------------
-	http://localhost/janata/public/edit/category	id=2
+	http://localhost/janata/public/delete/category	id=2
 
 expense
 ==========================================
@@ -108,6 +108,9 @@ Due
 	get all due vouchers
 	----------------------
 	http://localhost/janata/public/get/due-voucher?start_date=2015-08-08&end_date=2016-08-08
+	get due voucher by customer id
+	---------------------------------
+	http://localhost/janata/public/get/due-voucher/3
 Expense
 ======================================
 	add expense voucher

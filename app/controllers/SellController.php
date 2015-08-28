@@ -53,6 +53,7 @@ class SellController extends BaseController{
 			return 1;
 		}catch(\Exception $e){
 			DB::rollback();
+			return $e->getMessage();
 			return 0;
 		}
 	}

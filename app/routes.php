@@ -132,6 +132,10 @@ Route::get('/get/due-voucher', array(
 		'as'	=>	'getAllDueVouchers',
 		'uses'	=>	'DueController@getAllDueVouchers'
 	));
+Route::get('/get/due-voucher/{id}', array(
+		'as'	=>	'getAllDueVouchersByCustomer',
+		'uses'	=>	'DueController@getAllDueVouchersByCustomer'
+	));
 
 /*
 *	Expense

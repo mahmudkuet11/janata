@@ -183,7 +183,7 @@ class ReportController extends BaseController{
 		$end_date = Input::get('end_date');
 
 		$rows = DB::table('sell_ledgers')->whereBetween('date', array($start_date, $end_date))->get();
-		$sl = 1;
+		$sl = 0;
 		$report = array();
 		foreach ($rows as $row) {
 			$date = $row->date;
@@ -210,7 +210,7 @@ class ReportController extends BaseController{
 		$end_date = Input::get('end_date');
 
 		$rows = DB::table('expense_ledgers')->whereBetween('date', array($start_date, $end_date))->get();
-		$sl = 1;
+		$sl = 0;
 		$report = array();
 		foreach ($rows as $row) {
 			$entry_id = $row->id;
@@ -239,7 +239,7 @@ class ReportController extends BaseController{
 		$end_date = Input::get('end_date');
 
 		$rows = DB::table('sell_ledgers')->whereBetween('date', array($start_date, $end_date))->get();
-		$sl = 1;
+		$sl = 0;
 		$report = array();
 		foreach ($rows as $row) {
 			$entry_id = $row->id;
