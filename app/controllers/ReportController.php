@@ -164,8 +164,14 @@ class ReportController extends BaseController{
 		$end_date = Input::get('end_date');
 
 		$total_sell = DB::select(DB::raw("select sum(sell_rate*quantity) as total_sell,sum(paid_amount) as paid,sum(due) as due from sell_ledgers where date between '". $start_date ."' and '". $end_date ."'"));
+		$items = DB::table('sell_ledgers')->whereBetween('date', array($start_date, $end_date))->get();
+		$total_purchase = 0;
+		foreach ($items as $item) {
+			$p_price = DB::table('categories')->where('id', $item->category_id)->first()->purchase_price;
+			$total_purchase = $total_purchase + ($item->quantity * $p_price);
+		}
 
-		$total_purchase = DB::select(DB::raw("select sum(quantity*purchase_rate) as total_purchase from purchase_ledgers where date between '". $start_date ."' and '". $end_date ."'"));
+		//$total_purchase = DB::select(DB::raw("select sum(quantity*purchase_rate) as total_purchase from purchase_ledgers where date between '". $start_date ."' and '". $end_date ."'"));
 
 		$total_expense = DB::select(DB::raw("select sum(amount) as total_expense from expense_ledgers where date between '". $start_date ."' and '". $end_date ."'"));
 
@@ -173,7 +179,7 @@ class ReportController extends BaseController{
 				'total_sell'	=>	$total_sell[0]->total_sell,
 				'total_paid'	=>	$total_sell[0]->paid,
 				'total_due'		=>	$total_sell[0]->due,
-				'total_purchase'	=>	$total_purchase[0]->total_purchase,
+				'total_purchase'	=>	$total_purchase,
 				'total_expense'	=>	$total_expense[0]->total_expense
 			));
 	}
