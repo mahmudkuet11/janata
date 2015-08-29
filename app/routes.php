@@ -205,3 +205,31 @@ Route::post('/change/password', array(
 		'as'	=>	'postChangePassword',
 		'uses'	=>	'AccountController@postChangePassword'
 	));
+
+/*
+*	cash and bank
+*/
+Route::post('/cash/deposit', array(
+		'as'	=>	'postCashDeposit',
+		'uses'	=>	'CashAndBankController@postCashDeposit'
+	));
+Route::post('/cash/withdraw', array(
+		'as'	=>	'postCashWithdraw',
+		'uses'	=>	'CashAndBankController@postCashWithdraw'
+	));
+Route::post('/bank/deposit', array(
+		'as'	=>	'postBankDeposit',
+		'uses'	=>	'CashAndBankController@postBankDeposit'
+	));
+Route::post('/bank/withdraw', array(
+		'as'	=>	'postBankWithdraw',
+		'uses'	=>	'CashAndBankController@postBankWithdraw'
+	));
+Route::get('/report/cash', array(
+		'as'	=>	'getCashReport',
+		'uses'	=>	'CashAndBankController@getCashReport'
+	));
+Route::get('/report/bank', array(
+		'as'	=>	'getBankReport',
+		'uses'	=>	'CashAndBankController@getBankReport'
+	));

@@ -220,7 +220,7 @@ class ReportController extends BaseController{
 			$amount = $row->amount;
 			$sl++;
 
-			$category_name = DB::table('categories')->where('id', $category)->first()->name;
+			$category_name = DB::table('expense_categories')->where('id', $category)->first()->name;
 			array_push($report, array(
 					'sl'	=>	$sl,
 					'entry_id'	=>	$entry_id,
